@@ -7,7 +7,7 @@
             <asp:Label ID="lblSoma1" runat="server" Text="+"></asp:Label>
             <asp:TextBox ID="txtAdd2" runat="server"></asp:TextBox>
             <asp:Label ID="lblResult1" runat="server" Text="="></asp:Label>
-            <asp:TextBox ID="TextResultSoma" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtResultSoma" runat="server"></asp:TextBox>
             </br>
             <asp:TextBox ID="txtSub1" runat="server"></asp:TextBox>
             <asp:Label ID="lbl2" runat="server" Text="-"></asp:Label>

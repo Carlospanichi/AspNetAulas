@@ -29,6 +29,10 @@ namespace _17_05
             rmult = n1 * n2;
             rdiv = n1 / n2;
             txtResuldado.Text = rsoma.ToString();
+            lbldiv.Text = rdiv.ToString();
+            lblmult.Text = rmult.ToString();
+            lblsub.Text = rsub.ToString();
+
         }
 
         protected void btnIgual_Click(object sender, EventArgs e)

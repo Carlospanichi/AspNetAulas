@@ -58,13 +58,13 @@ namespace _17_05 {
         protected global::System.Web.UI.WebControls.Label lblResult1;
         
         /// <summary>
-        /// TextResultSoma control.
+        /// txtResultSoma control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextResultSoma;
+        protected global::System.Web.UI.WebControls.TextBox txtResultSoma;
         
         /// <summary>
         /// txtSub1 control.
