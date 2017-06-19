@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2AA41004-5656-49E4-A000-D55F737CAF60}</ProjectGuid>
+    <ProjectGuid>{DE0E0E65-4B83-4341-8F4D-1DB150691734}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aula_24_05_EF_MF</RootNamespace>
-    <AssemblyName>Aula-24-05_EF_MF</AssemblyName>
+    <RootNamespace>AvaliacaoUm</RootNamespace>
+    <AssemblyName>AvaliacaoUm</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -143,11 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Produtos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -158,24 +156,24 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\BaseDados.edmx">
+    <EntityDeploy Include="Model\BancoFerramentaBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseDados.Designer.cs</LastGenOutput>
+      <LastGenOutput>BancoFerramentaBD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BaseDados.Context.tt">
+    <Content Include="Model\BancoFerramentaBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDados.Context.cs</LastGenOutput>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+      <LastGenOutput>BancoFerramentaBD.Context.cs</LastGenOutput>
+      <DependentUpon>BancoFerramentaBD.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\BaseDados.edmx.diagram">
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+    <Content Include="Model\BancoFerramentaBD.edmx.diagram">
+      <DependentUpon>BancoFerramentaBD.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\BaseDados.edmx.sql" />
-    <Content Include="Models\BaseDados.tt">
+    <Content Include="Model\BancoFerramentaBD.edmx.sql" />
+    <Content Include="Model\BancoFerramentaBD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDados.cs</LastGenOutput>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+      <LastGenOutput>BancoFerramentaBD.cs</LastGenOutput>
+      <DependentUpon>BancoFerramentaBD.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -206,13 +204,14 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\BasePage.aspx" />
-    <Content Include="Views\Categorias\Lista.aspx" />
+    <Content Include="View\FerramentaView\FerramentaV.aspx" />
+    <Content Include="View\FerramentaView\ListarFerramentas.aspx" />
+    <Content Include="View\LoteView\ListarLotes.aspx" />
+    <Content Include="View\LoteView\LoteV.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -236,44 +235,32 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Controller\CategoriaController.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\FerramentaController.cs" />
+    <Compile Include="Controller\LoteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.Context.cs">
+    <Compile Include="Model\BancoFerramentaBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.Context.tt</DependentUpon>
+      <DependentUpon>BancoFerramentaBD.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.cs">
+    <Compile Include="Model\BancoFerramentaBD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BancoFerramentaBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.Designer.cs">
+    <Compile Include="Model\BancoFerramentaBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+      <DependentUpon>BancoFerramentaBD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Categoria.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+    <Compile Include="Model\Ferramenta.cs">
+      <DependentUpon>BancoFerramentaBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Produto.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+    <Compile Include="Model\Lote.cs">
+      <DependentUpon>BancoFerramentaBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -297,19 +284,33 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\BasePage.aspx.cs">
-      <DependentUpon>BasePage.aspx</DependentUpon>
+    <Compile Include="View\FerramentaView\FerramentaV.aspx.cs">
+      <DependentUpon>FerramentaV.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\BasePage.aspx.designer.cs">
-      <DependentUpon>BasePage.aspx</DependentUpon>
+    <Compile Include="View\FerramentaView\FerramentaV.aspx.designer.cs">
+      <DependentUpon>FerramentaV.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Categorias\Lista.aspx.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
+    <Compile Include="View\FerramentaView\ListarFerramentas.aspx.cs">
+      <DependentUpon>ListarFerramentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Categorias\Lista.aspx.designer.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
+    <Compile Include="View\FerramentaView\ListarFerramentas.aspx.designer.cs">
+      <DependentUpon>ListarFerramentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoteView\ListarLotes.aspx.cs">
+      <DependentUpon>ListarLotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LoteView\ListarLotes.aspx.designer.cs">
+      <DependentUpon>ListarLotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoteView\LoteV.aspx.cs">
+      <DependentUpon>LoteV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LoteView\LoteV.aspx.designer.cs">
+      <DependentUpon>LoteV.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -328,9 +329,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>36741</DevelopmentServerPort>
+          <DevelopmentServerPort>3468</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:36741/</IISUrl>
+          <IISUrl>http://localhost:3468/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

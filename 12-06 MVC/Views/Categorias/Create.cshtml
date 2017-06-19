@@ -1,0 +1,28 @@
+﻿@model Aula_12_06_MVC.Models.Categoria;
+
+@{
+    ViewBag.Title = "Adicionar Categorias";
+}
+
+<h2>@ViewBag.Totle</h2>
+
+@using (Html.BeginForm())
+{   //<b>Nome</b>
+    //@Html.TextBox("Nome")
+    @Html.LabelFor (m => Model.Nome)
+    @Html.EditorFor(m => Model.Nome)
+    @Html.ValidationMessageFor(m => Model.Nome)
+
+    //<b>Descrição</b>
+    // @Html.TextBox("Descrição")
+
+    @Html.LabelFor(m => Model.Descricao)
+    //@Html.TextBoxFor (m => Model.Descricao)
+    @Html.EditorFor(m => Model.Descricao)
+
+    @Html.LabelFor(m => Model.Ativo)
+    @Html.EditorFor(m =>Model.Ativo)
+
+        <input type="submit" value="Adicionar" class="btn btn-default" />
+}
+

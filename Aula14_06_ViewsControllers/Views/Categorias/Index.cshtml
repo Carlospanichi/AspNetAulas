@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Aula14_06_ViewsControllers.Models.Categoria>
+
+@{
+    ViewBag.Title = "Categorias";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (TempData["Messagem"] != null)
+{
+    <p class="alert-info">@ViewBag.Messagem</p>
+}
+
+@foreach (var item in Model)
+{
+    @Html.LabelFor(m => item.Nome)
+    @Html.DisplayFor(m => item.Nome)
+}

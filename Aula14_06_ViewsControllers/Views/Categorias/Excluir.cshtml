@@ -1,0 +1,23 @@
+﻿@model Aula14_06_ViewsControllers.Models.Categoria
+
+@{
+    ViewBag.Title = "Excluir Categoria";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h2>Tem certeza que deseja excluir Categoria!!</h2>
+
+@@Html.LabelFor(m => Model.Nome)
+@Html.DisplayFor(m => Model.Nome)
+
+@Html.LabelFor(m => Model.Descricao)
+@Html.DisplayFor(m => Model.Descricao)
+
+@Html.LabelFor(m => Model.Ativo)
+@Html.DisplayFor(m => Model.Ativo)
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Excluir" class="btn btn-danger" />
+}
