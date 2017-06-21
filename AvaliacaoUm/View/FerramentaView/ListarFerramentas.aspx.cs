@@ -13,20 +13,25 @@ namespace AvaliacaoUm.View.FerramentaView
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FerramentaController frc  = new FerramentaController();
-            List<Ferramenta> lista = frc.Listar();
+            CarregarGridFerramentas();
 
-            gvFerramentas.DataSource = lista.OrderBy(c => c.Matricula);
-            gvFerramentas.DataBind();
-            
             if (!IsPostBack)
             {
                 FerramentaController lc = new FerramentaController();
             }
         }
 
+        private void CarregarGridFerramentas()
+        {
+            FerramentaController frc = new FerramentaController();
+            List<Ferramenta> lista = frc.Listar();
+
+            gvFerramentas.DataSource = lista.OrderBy(c => c.Matricula);
+            gvFerramentas.DataBind();
+        }
+
         protected void btnBuscar_Click(object sender, EventArgs e)
-        {            
+        {
             FerramentaController fc = new FerramentaController();
             Ferramenta fer = fc.BuscarPorMatricula(int.Parse(txtRMatricula.Text));
 
@@ -36,11 +41,12 @@ namespace AvaliacaoUm.View.FerramentaView
                 txtResultMatricula.Text = fer.Matricula;
                 txtRDiametro.Text = fer.Diametro;
                 txtRlote.Text = fer.LoteId.ToString();
-                lblNExiste.Text = "";
+                lblNExiste.Text = string.Empty;
             }
             else
             {
                 lblNExiste.Text = "* Ferramenta procurada não existe!!!";
+                LimparCampo();
             }
         }
 
@@ -55,27 +61,47 @@ namespace AvaliacaoUm.View.FerramentaView
             Ferramenta fer = fc.BuscarPorMatricula(int.Parse(txtRMatricula.Text));
             if (fer != null)
             {
-                txtResultMatricula.Text = fer.Matricula;
-                txtRDiametro.Text = fer.Diametro;
-                //Convert.ToInt32(txtRlote.Text) = fer.LoteId;
+                fer.Matricula = txtResultMatricula.Text;
+                fer.Diametro = txtRDiametro.Text;
+                fer.LoteId = int.Parse(txtRlote.Text);
                 fc.Editar(fer);
-            }
-            txtResultMatricula.Text = "";
+                lblNExiste.Text = "* Ferramenta Alterada!!!";
 
+            }
+            else
+            {
+                lblNExiste.Text = "* Ferramenta procurada não existe!!!";
+                LimparCampo();
+            }
+
+            CarregarGridFerramentas();
+           // LimparCampo();
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
             FerramentaController fc = new FerramentaController();
-            Ferramenta fer = fc.BuscarPorMatricula(int.Parse(txtRMatricula.Text)); 
+            Ferramenta fer = fc.BuscarPorMatricula(int.Parse(txtRMatricula.Text));
             if (fer != null)
             {
                 txtResultMatricula.Text = fer.Matricula;
                 txtRDiametro.Text = fer.Diametro;
                 //Convert.ToInt32(txtRlote.Text) = fer.LoteId;
                 fc.Excluir(fer);
-
             }
+            LimparCampo();
+
+            CarregarGridFerramentas();
         }
+
+        private void LimparCampo()
+        {
+            txtResultMatricula.Text = string.Empty;
+            txtRDiametro.Text = string.Empty;
+            txtResultMatricula.Text = string.Empty;
+            txtRlote.Text = string.Empty;
+            txtRMatricula.Text = string.Empty;
+        }
+
     }
 }

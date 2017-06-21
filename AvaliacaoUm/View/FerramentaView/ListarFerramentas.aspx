@@ -7,8 +7,14 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group" align="middle">
-                        <asp:GridView ID="gvFerramentas" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                        <asp:GridView ID="gvFerramentas" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
                             <AlternatingRowStyle BackColor="#CCCCCC" />
+                            <Columns>
+                                <asp:BoundField DataField="Id" HeaderText="ID" />
+                                <asp:BoundField DataField="Matricula" HeaderText="Matrícula" />
+                                <asp:BoundField DataField="Diametro" HeaderText="Diametro" />
+                                <asp:BoundField DataField="Lote.Nome" HeaderText="Lote" />
+                            </Columns>
                             <FooterStyle BackColor="#CCCCCC" />
                             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                             <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
